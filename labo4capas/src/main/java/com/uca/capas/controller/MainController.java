@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.uca.capas.domain.*;
+import com.uca.capas.domain.Producto;
+import com.uca.capas.domain.Robot;
 
 @Controller
 public class MainController {
@@ -32,8 +33,24 @@ public class MainController {
 			mav.setViewName("index");
 		} else {
 			//mav.addObject("msg", msg);
-			mav.setViewName("exito");
+			Robot robot = new Robot();
+			mav.addObject("robot",robot);
+			mav.setViewName("robot");
+			
 		}
 		return mav;
+	}
+	
+	@RequestMapping("/seguridad")
+	public ModelAndView formseguridad (@Valid @ModelAttribute Robot robot, BindingResult result) {
+	ModelAndView mav = new ModelAndView();	
+	
+	if(result.hasErrors()) {
+		mav.setViewName("robot");
+	}
+	else {
+		mav.setViewName("exito");
+	}
+	return mav;	
 	}
 }

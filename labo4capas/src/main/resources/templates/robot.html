@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Seguridad</title>
+</head>
+<body>
+<form th:action= "@{/formseguridad}" th:object = "${robot}" method ="post">
+<label> Marcar solo si usted es un robot</label>
+<input type= "radio" th:field="*{soyRobot}" th:value="${false}">
+<span th:errors="*{soyRobot}" style= "color: #E81505"></span><br>
+
+<input type="submit" value="Aceptar">
+</form>
+
+<a href ="/producto">Regresar</a>
+</body>
+</html>
