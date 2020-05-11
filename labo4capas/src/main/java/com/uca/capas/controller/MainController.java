@@ -41,7 +41,7 @@ public class MainController {
 		return mav;
 	}
 	
-	@RequestMapping("/seguridad")
+	@RequestMapping("/formseguridad")
 	public ModelAndView formseguridad (@Valid @ModelAttribute Robot robot, BindingResult result) {
 	ModelAndView mav = new ModelAndView();	
 	

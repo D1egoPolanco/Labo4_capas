@@ -3,31 +3,43 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Venta de producto</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
 </head>
 <body>
 
-<h1>Ingresar producto</h1>
+<h1 class="text-center">Ingresar producto</h1>
 
 <form th:action= "@{/formProducto}" th:object = "${producto}" method ="post">
-<label> Nombre del producto</label>
-<input type ="text" th:field="${producto.nombre}">
+ <div class="form-group">
+<label for "nombre" class="font-weight-bold"> Nombre del producto</label>
+<input type ="text" th:field="${producto.nombre}" id="nombre"  class="form-control"placeholder="Agregar nombre del producto">
 <span th:errors="*{nombre}" style= "color: #E81505"></span><br>
 
-<label> Descripcion</label>
-<input type ="text" th:field="${producto.descripcion}">
+<label class="font-weight-bold"> Descripcion del producto</label>
+<input type ="text" th:field="${producto.descripcion}" class="form-control"placeholder="Agregar descripcion de producto">
 <span th:errors="*{descripcion}" style= "color: #E81505"></span><br>
 
-<label>Precio del producto</label>
-<input type ="number" th:field="${producto.precio}">
+<label class="font-weight-bold">Precio del producto</label>
+<input type ="number" th:field="${producto.precio}"class="form-control"placeholder="Agregar precio del producto">
 <span th:errors="*{precio}" style= "color: #E81505"></span><br>
 
-<label>Fecha de vencimiento del producto</label>
-<input type ="text" th:field="${producto.vencimiento}">
+<label class="font-weight-bold">Fecha de vencimiento del producto</label>
+<input type ="text" th:field="${producto.vencimiento}"class="form-control"placeholder="Agregar fecha de vencimiento del producto">
 <span th:errors="*{vencimiento}" style= "color: #E81505"></span><br>
 
 
-<input type = "submit" value= "Agregqar producto">
+<input type = "submit" value= "Agregar producto" class="btn btn-primary">
+</div>
 </form>
+<style type="text/css">
+  body {
+      background-color: #EAEDED ; }
+  </style>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 </body>
 </html>

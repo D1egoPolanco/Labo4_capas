@@ -3,16 +3,29 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Seguridad</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
 </head>
 <body>
 <form th:action= "@{/formseguridad}" th:object = "${robot}" method ="post">
-<label> Marcar solo si usted es un robot</label>
-<input type= "radio" th:field="*{soyRobot}" th:value="${false}">
+
+<label > Marcar solo si usted es un robot  </label>
+<input type="radio" th:field="*{soyRobot}" th:value="${false}"  >
+
 <span th:errors="*{soyRobot}" style= "color: #E81505"></span><br>
 
-<input type="submit" value="Aceptar">
-</form>
+<input type="submit" value="Aceptar" class="btn btn-primary">
 
-<a href ="/producto">Regresar</a>
+</form>
+<br>
+<a href ="/producto" class="btn btn-warning">Regresar</a>
+<style type="text/css">
+  body {
+      background-color: #EAEDED ; }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  
 </body>
 </html>
